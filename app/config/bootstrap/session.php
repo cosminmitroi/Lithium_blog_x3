@@ -14,6 +14,24 @@
  */
 use lithium\storage\Session;
 
+use lithium\security\Auth;
+
+	
+	Session::config(array(
+	    'cookie' => array('adapter' => 'Cookie'),
+	    'default' => array('adapter' => 'Php')
+	));
+
+
+	Auth::config(array(
+	    'member' => array(
+	        'adapter' => 'Form', 
+	        'model'   => 'Users', 
+	        'fields'  => array('username', 'password') 
+	    )
+	));
+
+
 $name = basename(LITHIUM_APP_PATH);
 Session::config(array(
 	// 'cookie' => array('adapter' => 'Cookie', 'name' => $name),
@@ -38,14 +56,19 @@ Session::config(array(
  * @see lithium\action\Request::$data
  * @see lithium\security\Auth
  */
-// use lithium\security\Auth;
+use app\models\Users;
+use lithium\security\Password;
 
-// Auth::config(array(
-// 	'default' => array(
-// 		'adapter' => 'Form',
-// 		'model' => 'Users',
-// 		'fields' => array('username', 'password')
-// 	)
-// ));
+Users::applyFilter('save', function($self, $params, $chain) {
+    if ($params['data']) {
+        $params['entity']->set($params['data']);
+        $params['data'] = array();
+    }
+    if (!$params['entity']->exists()) {
+        $params['entity']->password = Password::hash($params['entity']->password);
+    }
+    return $chain->next($self, $params, $chain);
+});
+
 
 ?>
