@@ -62,48 +62,5 @@ class UsersController extends \lithium\action\Controller{
 		}
 
 
-			    // $register = NULL;
-// 			
-			    // if ( $this->request->data ){
-			        // $register = Users::create($this->request->data);
-			        // if ( $register->save() ){
-			            // $this->redirect(array('controller' => 'users', 'action' => 'index'));
-			        // }
-// 			
-			    // }
-// 				
-				// // if ( !Auth::check('member', $this->request) ){
-			    // // //User is not authenticated, redirect to login
-			    // // return $this->redirect('/users/login/');
-			 // // }
-			    // $data = $this->request->data;
-// 			
-			    // return compact('register','data');
-			// }
-// 	   
-		
-		// public function edit(){
-			// if(!$this->request->params['id']){
-				 // return $this->redirect('Users::index');
-			// }
-			// if($this->request->data){
-				// if(Users::update(array(
-				            // 'username' => $this->request->data['username'],
-				            // 'email' => $this->request->data['email'],
-				            // 'firstname' => $this->request->data['firstname'],
-				            // 'lastname' => $this->request->data['lastname'],       
-// 				             
-				 // ),
-				   // array(
-				        // 'id' => $this->request->data['id']
-				    // )
-// 				                      
-				// ));
-			// }
-			// $user = Users::first( $this->request->params['id'] );
-			// return compact('user');
-		// }
-		
-
- }
+  }
 ?>
