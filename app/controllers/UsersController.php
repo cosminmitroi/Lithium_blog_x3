@@ -65,7 +65,25 @@ class UsersController extends \lithium\action\Controller{
 	        }
 	        return compact('user');
 		}
-      
+       public function edit($id = null){
+		  	$id =(int)$id;
+			$user = Users::find($id);
+		    if(!Auth::check('member', $this->request)){
+		    	  return $this->redirect('Users::index');
+		    }
+				if(empty($user)){
+					$this->redirect('Users::index');
+					
+				}
+				if($this->request->data){
+					 if($user->save($this->request->data)){
+					 	$this->redirect(array('controller' => 'users', 'action' => 'index'));
+					 }
+				}
+			$title = "Edit user";
+			return compact('user','title');
+		
+	  }
 	   public function delete($id = null){
 	      if(!Auth::check('member', $this->request)){
 	        	return $this->redirect('Users::index');
