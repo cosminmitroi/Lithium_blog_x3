@@ -1,4 +1,5 @@
 .DS_Store
-app/libraries/*
-app/resources/tmp/*
+app/libraries/* 
+db/schema.rb
+pp/resources/tmp/*
 .*.sw[op]
