@@ -37,16 +37,21 @@ class UsersController extends \lithium\action\Controller{
 			return $this->redirect('Posts::index');
         }
 		 
-		public function view() {
-				if(!isset($this->request->params['id'])){
-					  return $this->redirect('Users::index');
-		 		}	
-			  $user = Users::find($this->request->params['id']);
-			 
-				return compact('user');
+        public function view($id = null){
+        	if(!Auth::check('member', $this->request)) {
+				return $this->redirect('Users::login');	
 			}
-       
-
+ 			
+		    $id = (int) $id;
+		    $users = Users::find($id);
+		   
+		   if (!$users){
+		   	 throw new Exception ('Invalid user if provided');
+		   }
+            $users = $users->to('array');
+			
+			return compact('users','id'); 
+        }
 		public function newUser(){
 			
 			if(!Auth::check('member', $this->request)) {
