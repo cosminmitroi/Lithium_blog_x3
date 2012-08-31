@@ -45,16 +45,6 @@ public static function current($refreshFromDatabase = false) {
 	        return $userEntity;
     }    		
 
-	/*public function save($entity, $data = null, array $options = array()) {
-		
-            if(!$entity->exists()){
-			        $entity->password = lithium\util\String::hash($entity->password);
-			    }
-			
-			    return parent::save($entity, $data,  $options);
-	
-	}*/
-
 }
 
 
