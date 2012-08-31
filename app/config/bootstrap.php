@@ -51,6 +51,8 @@ if (PHP_SAPI !== 'cli') {
  */
 require __DIR__ . '/bootstrap/connections.php';
 
+
+
 /**
  * This file defines bindings between classes which are triggered during the request cycle, and
  * allow the framework to automatically configure its environmental settings. You can add your own
@@ -62,7 +64,7 @@ require __DIR__ . '/bootstrap/action.php';
  * This file contains configuration for session (and/or cookie) storage, and user or web service
  * authentication.
  */
-// require __DIR__ . '/bootstrap/session.php';
+ require __DIR__ . '/bootstrap/session.php';
 
 /**
  * This file contains your application's globalization rules, including inflections,
@@ -77,11 +79,16 @@ require __DIR__ . '/bootstrap/action.php';
  */
 // require __DIR__ . '/bootstrap/media.php';
 
+
+
 /**
  * This file configures console filters and settings, specifically output behavior and coloring.
  */
 if (PHP_SAPI === 'cli') {
 	require __DIR__ . '/bootstrap/console.php';
 }
+
+
+
 
 ?>
