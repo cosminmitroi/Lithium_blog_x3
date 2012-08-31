@@ -60,6 +60,24 @@ class UsersController extends \lithium\action\Controller{
 	        }
 	        return compact('user');
 		}
+      
+	   public function delete($id = null){
+	      if(!Auth::check('member', $this->request)){
+	        	return $this->redirect('Users::index');
+	      	
+	        }
+		   $id = (int) $id;
+		   $users = Users::find($id);
+		   if(empty($post)){
+			   	    $this->redirect(array('controller' => 'users', 'action' => 'index'));
+			   }
+			   if($users->delete()){
+			   	    $this->redirect(array('controller' => 'users', 'action' => 'index'));
+			   }
+		     	
+		
+		      return;
+    	  }
 
 
   }
