@@ -169,24 +169,5 @@ class PostsController extends \lithium\action\Controller {
         return;
     }
 
-			
- // $posts = Posts::all(array(
-				 	// 'with' => 'Users',
-				 	// 'fields' => array(
-						// 'Posts' => array(
-						    // 'id',
-							// 'title',
-							// 'body',
-						// ),
-// 						
-						// 'Users' => array(
-							// 'username',
-// 						
-						// )
-					// ),
-				 // ));
-				 // $posts = $posts ? $posts->data() : array();	
-	
-
 	
 }
