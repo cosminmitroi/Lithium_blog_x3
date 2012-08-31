@@ -61,7 +61,7 @@ class UsersController extends \lithium\action\Controller{
 	        return compact('user');
 		}
 
-	  // public function add(){
+
 			    // $register = NULL;
 // 			
 			    // if ( $this->request->data ){
