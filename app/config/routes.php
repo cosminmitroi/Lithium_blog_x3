@@ -79,6 +79,15 @@ if (!Environment::is('production')) {
  * In almost all cases, custom routes should be added above this one, since route-matching works in
  * a top-down fashion.
  */
+ /**
+ * Finally, connect the default routes.
+ */
+Router::connect('/{:controller}/{:action}/{:id:[0-9]+}.{:type}', array('id' => null));
+//Router::connect('/{:controller}/{:action}/{:id:[0-9]+}');
+
+Router::connect('/{:controller}/{:action}/page:{:page:[0-9]+}');
+Router::connect('/{:controller}/{:action}/page:{:page}/limit:{:limit}');
+ 
 Router::connect('/{:controller}/{:action}/{:args}');
 
 ?>
