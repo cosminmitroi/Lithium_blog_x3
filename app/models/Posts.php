@@ -59,13 +59,6 @@ class Posts extends \lithium\data\Model {
             return !Posts::find('first', array('conditions' => $conditions));
         });
 		
-	  // Posts::applyFilter('delete', function($self, $params, $chain) {
-//            
-            // $comment = Comment::create();
-            // $comment->delete(array('conditions' => array('post_id' => $post->id)));
-//  
-            // return $chain->next($self, $params, $chain);
-        // });
 
     }
 }
