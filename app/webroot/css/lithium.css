@@ -41,7 +41,7 @@ em { font-style: italic; }
 a { text-decoration: none; color: #666; }
 a, h1 a, h2 a { text-decoration: none; }
 a:hover { color: #00bbff; }
-a:visited:hover { color: #ff59ff; }
+a:visited:hover { color: #00bbff; }
 a img { border: none; }
 
 /*--- Code ---*/
