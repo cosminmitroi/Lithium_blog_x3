@@ -2,7 +2,7 @@
 namespace app\controllers;
 
 use app\models\Posts;
-//use app\models\Comments;
+
 
 use app\models\Users;
 use lithium\security\Auth;
