@@ -97,7 +97,7 @@ $('.dropdown').hover(function() {
 		///	if($this->_request->url != '/users/login'):
 			?>
 		    <?php if(Auth::check('member')){?>
-		    <h3>User login: <?= ucfirst(Session::read('member.username'));?></h3>
+		    <h3>User login: <?=$this->html->image('edituser.png')?> <?= ucfirst(Session::read('member.username'));?></h3>
 		    <?php }?>
 	       <div class="mc_blog">
 			<ul id="navigation">
