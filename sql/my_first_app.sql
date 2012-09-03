@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 3.3.9.1
 -- http://www.phpmyadmin.net
--- Cosmin M
+-- Cosmin Mitroi
 -- Host: localhost
 -- Generation Time: Aug 31, 2012 at 09:52 AM
 -- Server version: 5.5.9
