@@ -18,10 +18,8 @@ class UsersController extends \lithium\action\Controller{
 			}
 	        
 	    
-       }
-	   
+       } 
 
-    
 	   public function login() {
 			if(Auth::check('member', $this->request)) {
 				$this->request->isauth = 1;
@@ -91,7 +89,7 @@ class UsersController extends \lithium\action\Controller{
 	        }
 		   $id = (int) $id;
 		   $users = Users::find($id);
-		   if(empty($post)){
+		   if(empty($users)){
 			   	    $this->redirect(array('controller' => 'users', 'action' => 'index'));
 			   }
 			   if($users->delete()){
