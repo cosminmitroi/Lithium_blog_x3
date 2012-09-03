@@ -40,7 +40,7 @@ class PostsController extends \lithium\action\Controller {
 							'alias' => 'Users',
 							'constraint' => 'Users.id = Posts.user_id'
 						);				
-						
+							
 		if(Auth::check('member', $this->request)) {
 			  $posts = Posts::all(array(
 				 	'conditions' => array(
@@ -96,7 +96,7 @@ class PostsController extends \lithium\action\Controller {
         $post = $post->to('array');
         $title = $post['title'];
  
-        return compact('post', 'comments', 'comment', 'id', 'title');
+        return compact('post', 'id', 'title');
     }
     
     public function add() {
@@ -111,7 +111,7 @@ class PostsController extends \lithium\action\Controller {
 			$post->user_id = $user_id;
 		    
              if ($post->save()) {
-                 $this->redirect(array('controller' => 'posts', 'action' => 'index'));
+                 $this->redirect('Posts::index');
              }
         }
 
@@ -161,9 +161,8 @@ class PostsController extends \lithium\action\Controller {
 
         if ($post->delete()) {
             $this->redirect(array('controller' => 'posts', 'action' => 'index'));
-        } else {
-            $this->redirect(array('controller' => 'posts', 'action' => 'index'));
         }
+		
         $this->redirect(array('controller' => 'posts', 'action' => 'index'));
 
         return;
