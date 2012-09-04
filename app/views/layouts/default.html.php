@@ -13,7 +13,8 @@
 <head>
 	<?php echo $this->html->charset();?>
 	<title>Blog Application X3 &gt; <?php echo $this->title(); ?></title>
-	<?php echo $this->html->style(array('debug', 'lithium')); ?>
+	<?php echo $this->html->style(array('debug', 'lithium')); ?> 
+
 	<?php echo $this->scripts(); ?>
 	<?php echo $this->html->link('Icon', null, array('type' => 'icon')); ?>
 	
@@ -40,7 +41,7 @@ ul#navigation {
 ul#navigation li{
 			float:left;
 			border:1px black solid;
-			min-width:100px;
+			min-width:80px;
 			text-decoration: none;
 			margin-right: 5px;
 			box-shadow: 1px 1px 2px rgba(0,0,0,.5);
@@ -58,12 +59,12 @@ ul#navigation li a{
 ul.sub_navigation {
 			position:absolute;
 			display:none;
+			
+		
 		}
  
-ul.sub_navigation li {
+ul.sub_navigation li{
 			clear:both;
-			box-shadow: 2px 2px 1px rgba(1,1,0,.2);
-			
 		}
 a:active,
 a:visited {
@@ -97,7 +98,9 @@ $('.dropdown').hover(function() {
 		///	if($this->_request->url != '/users/login'):
 			?>
 		    <?php if(Auth::check('member')){?>
-		    <h3>User login: <?=$this->html->image('edituser.png')?> <?= ucfirst(Session::read('member.username'));?></h3>
+		    <h3>User login:  	
+		    <a href="/users/view/<?=Session::read('member.id')?>"><?=$this->html->image('edituser.png')?> <?= ucfirst(Session::read('member.username'));?></a>
+		    </h3>
 		    <?php }?>
 	       <div class="mc_blog">
 			<ul id="navigation">
