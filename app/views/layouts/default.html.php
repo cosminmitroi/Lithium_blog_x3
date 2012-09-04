@@ -62,10 +62,18 @@ ul.sub_navigation {
 			
 		
 		}
- 
-ul.sub_navigation li{
+ul#navigation li:hover{
+	-webkit-border-radius: 10px 4px 10px / 0.5px 2px;
+	box-shadow: 1px 3px 4px rgba(0,1,0,.5);
+}
+ul#navigation .sub_navigation li{
 			clear:both;
+			border: 1px black solid;
+			box-shadow: 1px 3px 4px rgba(0,1,0,.5);
+			-webkit-border-radius: 4px 10px 4px / 0.5px 1.5px;
+			-webkit-box-shadow: 1px 3px 4px rgba(0,1,0,.5);  	
 		}
+
 a:active,
 a:visited {
 			display:block;
