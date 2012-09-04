@@ -68,7 +68,6 @@ ul#navigation li:hover{
 }
 ul#navigation .sub_navigation li{
 			clear:both;
-			border: 1px black solid;
 			box-shadow: 1px 3px 4px rgba(0,1,0,.5);
 			-webkit-border-radius: 4px 10px 4px / 0.5px 1.5px;
 			-webkit-box-shadow: 1px 3px 4px rgba(0,1,0,.5);  	
